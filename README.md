@@ -83,7 +83,7 @@ Zbadaj zachowanie programu w zależności od podanych z klawiatury zmiennych.
 W przypadku, gdy istnieje więcej niż 1 blok `catch`, wyjątki dopasowywane są do pierwszego bloku (w kolejności, w której występuje w kodzie), do którego jest to możliwe.
 W związku z tym, jeżeli wyjątki są polimorficzne, przeważnie najlepiej umieścić klasy bazowe na końcu, aby obsłużyć wyjątek w możliwie jak najbardziej "wyspecjalizowany" sposób.
 W praktyce, pisząc bloki `catch` powinniśmy trzymać się następującj hierarchii:
-1. Wyjątki konkretnych typów, zdefiniowanych przez nas lub biblioteki, z któcyh korzystamy
+1. Wyjątki konkretnych typów, zdefiniowanych przez nas lub biblioteki, z których korzystamy
 2. Wyjątki STL klas pochodnych (np. `std::bad_alloc` i `std::bad_variant_access`)
 3. `std::exception`
 4. Blok `catch(...)`
@@ -116,7 +116,7 @@ Oznacza to, że wołane są destruktory wszystkich zmiennych ze scope'ów poprze
 Jeżeli mamy stos wywołań (*call stack*) funkcji A-Z (funkcja A woła B, B woła C, itd.), to możemy śmiało rzucić wyjątek w funkcji Z i złapać go w funkcji A.
 Funkcje B-Y nie muszą nic wiedzieć o możliwości zaistnienia wyjątku.
 Dzięki rozwijaniu stosu, stworzone dotychczas zmienne w B-Y zostaną automatycznie i poprawnie zniszczone, co pozwoli nam uniknąć wycieku zasobów i innych nieprzyjemnych sytuacji.
-Jest to koleny argument za stosowaniem podejścia RAII.
+Jest to kolejny argument za stosowaniem podejścia RAII.
 
 #### Zadanie 6
 Napisz klasę `Informer`, która drukuje informację o konstrukcji i destrukcji jej obiektów (możesz użyć tej napisanej na wcześniejszych zajęciach).
